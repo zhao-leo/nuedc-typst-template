@@ -22,11 +22,11 @@
   // 初始化相关页面、文本和段落样式
   set page(
     paper: "a4",
-    margin: (top: 2.54cm, bottom: 2.54cm, left: 3.18cm, right: 3.18cm),
+    margin: (top: 3cm, bottom: 2.54cm, left: 3.18cm, right: 3.18cm),
   )
   // 设置字体
   set text(
-    font: ("Times New Roman", "SimHei"),
+    font: ("Times New Roman", "SimSun"),
     size: 12pt,
     weight: "regular",
     lang: "zh",
@@ -39,7 +39,7 @@
   // 正文首行缩进和行距设置
   set par(
     first-line-indent: (amount: 2em, all: true),
-    leading: 1em,
+    leading:22pt,
     linebreaks: "optimized",
     justify: true,
   )

@@ -12,15 +12,15 @@
 ) = {
   // 封面页
   align(center)[
-    #v(2cm)
+    #v(1.5cm)
     // 第一行：学年学期
-    #text(size: 24pt, font: "STZhongsong", weight: "bold")[#year 年全国大学生电子设计竞赛]
-    #v(1.2cm)
+    #text(size: 24pt, font: "SimSun", weight: "bold")[#year 年全国大学生电子设计竞赛]
+    #v(0.5cm)
     // 第二行：实验报告标题
-    #text(size: 24pt, font: "STZhongsong", weight: "bold")[#problem-id 题：#problem-name]
+    #text(size: 24pt, font: "SimSun", weight: "bold")[#problem-id 题：#problem-name]
     #v(0.5cm)
 
-    #text(size: 15pt, font: "STZhongsong")[设计报告]
+    #text(size: 15pt, font: "SimSun")[设计报告]
     #v(2cm)
 
     // Logo
@@ -33,7 +33,7 @@
       grid(
         columns: (auto, auto),
         align(right)[
-          #text(font: "STSong", size: 14pt, weight: "bold")[*#label*]
+          #text(font: "SimSun", size: 14pt, weight: "bold")[*#label*]
         ],
         [
           #box(width: 180pt)[
@@ -42,7 +42,7 @@
                 #line(length: 180pt)
               ]
               #align(center)[
-                #text(font: "STSong", size: 14pt)[#content]
+                #text(font: "SimSun", size: 14pt)[#content]
               ]
             ]
           ]
@@ -63,7 +63,7 @@
     }
     #if show-teachers {
       let flag = 0
-      for member in team-members {
+      for member in teachers {
         if flag == 0 {
           info-row("指导教师：", member)
           flag = 1
@@ -78,7 +78,7 @@
     #v(1cm)
 
     // 生成时间信息
-    #text(size: 15pt, font: "STZhongsong")[#datetime.today().display("[year]年[month]月[day]日")]
+    #text(size: 15pt, font: "SimSun")[#datetime.today().display("[year]年[month]月[day]日")]
   ]
   pagebreak()
 }
