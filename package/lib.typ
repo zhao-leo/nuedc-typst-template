@@ -17,6 +17,7 @@
   abstract: content,
   keywords: array,
   show-teachers: true,
+  show-cover: true,
   body,
 ) = {
   // 初始化相关页面、文本和段落样式
@@ -127,16 +128,19 @@
   ]
 
   // 正文声明
-  generate-cover(
-    year: year,
-    problem-id: problem-id,
-    problem-name: problem-name,
-    team-id: team-id,
-    school: school,
-    team-members: team-members,
-    teachers: teachers,
-    show-teachers: show-teachers,
-  )
+  if show-cover {
+    // 生成封面
+    generate-cover(
+      year: year,
+      problem-id: problem-id,
+      problem-name: problem-name,
+      team-id: team-id,
+      school: school,
+      team-members: team-members,
+      teachers: teachers,
+      show-teachers: show-teachers,
+    )
+  }
   abstract-page(
     body: abstract,
     keywords: keywords,
