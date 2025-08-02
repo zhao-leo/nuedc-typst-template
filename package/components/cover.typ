@@ -9,6 +9,7 @@
   team-members: array,
   teachers: array,
   show-teachers: true,
+  show-information: true,
 ) = {
   // 封面页
   align(center)[
@@ -23,13 +24,14 @@
     #text(size: 15pt, font: "SimSun")[设计报告]
     #v(2cm)
 
+
+
+    #if show-information {
     // Logo
-    #image("../assets/logo.png", width: 40%)
-    #v(3cm)
-
-
+    image("../assets/logo.png", width: 40%)
+    v(3cm)
     // 信息表格
-    #let info-row(label, content) = {
+    let info-row(label, content) = {
       grid(
         columns: (auto, auto),
         align(right)[
@@ -50,10 +52,10 @@
       )
     }
 
-    #info-row("参赛队号：", team-id)
-    #info-row("参赛学校：", school)
-    #let flag = 0;
-    #for member in team-members {
+    info-row("参赛队号：", team-id)
+    info-row("参赛学校：", school)
+    let flag = 0;
+    for member in team-members {
       if flag == 0 {
         info-row("参赛队员：", member)
         flag = 1
@@ -61,7 +63,7 @@
         info-row("　　　　  ", member) // 空标签行
       }
     }
-    #if show-teachers {
+    if show-teachers {
       let flag = 0
       for member in teachers {
         if flag == 0 {
@@ -72,10 +74,13 @@
         }
       }
     }
-
-
     // 添加间距
-    #v(1cm)
+    v(1cm)
+    } else {
+      image("../assets/logo.png", width: 80%)
+      v(4cm)
+    }
+
 
     // 生成时间信息
     #text(size: 15pt, font: "SimSun")[#datetime.today().display("[year]年[month]月[day]日")]

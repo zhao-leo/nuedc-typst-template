@@ -18,6 +18,7 @@
   keywords: array,
   show-teachers: true,
   show-cover: true,
+  show-information: true,
   body,
 ) = {
   // 初始化相关页面、文本和段落样式
@@ -139,6 +140,7 @@
       team-members: team-members,
       teachers: teachers,
       show-teachers: show-teachers,
+      show-information: show-information,
     )
   }
   abstract-page(
